@@ -1,5 +1,5 @@
 {% set name = "addfips" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e3525553f32a8c38c4e2130b473614b0e6e56846d8f3ed07162b14467481a957 
+  sha256: 1f397c940dd25eb3524c57c3e2182fed4d7d01a1184bcd0c5932c127fff71266
 
 build:
-  skip: True  # [not unix]
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  skip: true  # [not unix]
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+
   entry_points:
     - addfips = addfips.__main__:main
 
@@ -31,19 +32,19 @@ test:
     - addfips --help
 
 about:
-  home: https://github.com/fitnr/addfips/ 
+  home: https://github.com/fitnr/addfips/
   license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE
-  summary: "AddFIPS is a tool for adding state or county FIPS codes to files that contain just the names of those geographies."
+  summary: AddFIPS is a tool for adding state or county FIPS codes to files that contain just the names of those geographies.
 
   description: |
     AddFIPS is a tool for adding state or county FIPS codes to files that
     contain just the names of those geographies. FIPS codes are the official
     ID numbers of places in the US. They're invaluable for matching data from
     different sources.
-  doc_url: https://github.com/fitnr/addfips/ 
-  dev_url: https://github.com/fitnr/addfips/ 
+  doc_url: https://github.com/fitnr/addfips/
+  dev_url: https://github.com/fitnr/addfips/
 
 extra:
   recipe-maintainers:
