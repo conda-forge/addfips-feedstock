@@ -1,5 +1,5 @@
 {% set name = "addfips" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/addfips-{{ version }}.tar.gz
-  sha256: 1f397c940dd25eb3524c57c3e2182fed4d7d01a1184bcd0c5932c127fff71266
+  sha256: 71008c3937add36670d2a7d301213dbee301941662c5ebe673639677eedb7053
 
 build:
   number: 0
